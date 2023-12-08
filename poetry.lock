@@ -44,6 +44,18 @@ optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
 
 [[package]]
+name = "dj-database-url"
+version = "2.1.0"
+description = "Use Database URLs in your Django Application."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+Django = ">=3.2"
+typing-extensions = ">=3.10.0.0"
+
+[[package]]
 name = "django"
 version = "5.0"
 description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
@@ -86,6 +98,14 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [package.extras]
 dev = ["pre-commit", "tox"]
+
+[[package]]
+name = "psycopg2-binary"
+version = "2.9.9"
+description = "psycopg2 - Python-PostgreSQL Database Adapter"
+category = "main"
+optional = false
+python-versions = ">=3.7"
 
 [[package]]
 name = "py"
@@ -157,17 +177,19 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "e51ce5a8dba81bbd2e9249d665afae1e79e1fd1e59a0805e9ffca18981c7498c"
+content-hash = "9fdc48784316c8e402da155998e457f13b815b9c4863642b1ab44643bff318cc"
 
 [metadata.files]
 asgiref = []
 atomicwrites = []
 attrs = []
 colorama = []
+dj-database-url = []
 django = []
 more-itertools = []
 packaging = []
 pluggy = []
+psycopg2-binary = []
 py = []
 pytest = []
 sqlparse = []
