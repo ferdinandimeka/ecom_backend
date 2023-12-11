@@ -18,15 +18,15 @@ def getRoutes(request):
     ]
     return Response(routes)
 
-
+@api_view(['GET'])
 def getProducts(request):
-    query = request.query_params.get('keyword')
+    query = request.GET.get('keyword')
     if query == None:
         query = ''
     
     products = Product.objects.filter(name__icontains = query).order_by('-_id')
 
-    page = request.query_params.get('page')
+    page = request.GET.get('page')
     paginator = Paginator(products, 10)
 
     try:
