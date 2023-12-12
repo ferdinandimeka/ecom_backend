@@ -156,6 +156,14 @@ optional = false
 python-versions = ">=3.8"
 
 [[package]]
+name = "package"
+version = "0.1.1"
+description = "package is a package to package your package"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "packaging"
 version = "23.2"
 description = "Core utilities for Python packages"
@@ -297,7 +305,7 @@ brotli = ["brotli"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "61c9dac2447a1712ef9ba708c36a42698d02c5371300be6f7797e8b2c6f05092"
+content-hash = "04b48b41654b60afc6015044921fa547fc34ccc56890d623c4982dec59edcbdb"
 
 [metadata.files]
 asgiref = []
@@ -312,6 +320,7 @@ djangorestframework = []
 djangorestframework-simplejwt = []
 gunicorn = []
 more-itertools = []
+package = []
 packaging = []
 pillow = []
 pluggy = []
