@@ -5,6 +5,7 @@ from .models import Order
 from .models import ShippingAddress
 from .models import OrderItem
 from .models import Review
+from .models import Transaction
 from django.db.models import fields
 from rest_framework_simplejwt.tokens import RefreshToken
 
@@ -89,3 +90,8 @@ class OrderSerializer(serializers.ModelSerializer):
         items = obj.user
         serializer = UserSerializer(items, many=False)
         return serializer.data
+    
+class TransactionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Transaction
+        fields = '__all__'

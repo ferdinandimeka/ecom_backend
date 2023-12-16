@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Review, Order, OrderItem, ShippingAddress
+from .models import Product, Review, Order, OrderItem, ShippingAddress, Transaction, Categories
 
 # Register your models here.
 admin.site.register(Product)
@@ -13,3 +13,10 @@ class OrderAdmin(admin.ModelAdmin):
         'user', 'isPaid', 'paidAt', 'isDelivered', 'deliveredAt', 'totalPrice', 'createdAt'
         ]
 
+@admin.register(Transaction)
+class TransactionsAdmin(admin.ModelAdmin):
+    list_display = [
+        'user', 'transaction_id', 'amount', 'status', 'created_at'
+        ]
+    
+admin.register(Categories)
