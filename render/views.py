@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
-from .models import Product, Review, Order, OrderItem, ShippingAddress
-from .serializers import ProductSerializer, ReviewSerializer, UserSerializer, UserSerializerWithToken, OrderSerializer
+from .models import Product, Review, Order, OrderItem, ShippingAddress, Transaction
+from .serializers import ProductSerializer, ReviewSerializer, UserSerializer, UserSerializerWithToken, OrderSerializer, TransactionSerializer
 from django.core.paginator import PageNotAnInteger, Paginator, EmptyPage
 from django.contrib.auth.models import User
 from rest_framework import status
@@ -365,3 +365,17 @@ def updateOrderToDelivered(request, pk):
     order.deliveredAt = datetime.now()
     order.save()
     return Response('Order Has Been Delivered')
+
+@api_view(['GET'])
+@permission_classes([IsAdminUser])
+def getAllTransactions(request):
+    transactions = Transaction.objects.all()
+    serializer = TransactionSerializer(transactions, many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def getTransaction(request, pk):
+    transaction = Transaction.objects.get(_id=pk)
+    serializer = TransactionSerializer(transaction, many=False)
+    return Response(serializer.data)

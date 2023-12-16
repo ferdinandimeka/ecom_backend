@@ -40,7 +40,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'crispy_forms', # new
+    "crispy_bootstrap5", # new
     'render.apps.RenderConfig', # new
+    'inventory.apps.InventoryConfig', # new
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -53,6 +56,8 @@ INSTALLED_APPS = [
     'corsheaders', # new
     'rest_framework_simplejwt' # new
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap5' # new
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
@@ -119,7 +124,7 @@ ROOT_URLCONF = 'ecom.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [(os.path.join(BASE_DIR, 'templates'))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
