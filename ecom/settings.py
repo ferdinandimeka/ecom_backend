@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'crispy_forms', # new
     "crispy_bootstrap5", # new
     'render.apps.RenderConfig', # new
-    'inventory.apps.InventoryConfig', # new
+    # 'inventory.apps.InventoryConfig', # new
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -57,7 +57,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt' # new
 ]
 
-CRISPY_TEMPLATE_PACK = 'bootstrap5' # new
+# CRISPY_TEMPLATE_PACK = 'bootstrap5' # new
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
@@ -71,7 +71,6 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
          
     )
-    
 }
 
 MIDDLEWARE = [
@@ -199,10 +198,10 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MEDIA_URL = '/images/'
 
-STATICFILES_DIRS=[
-    BASE_DIR/'static',
-    BASE_DIR/'ecom_backend/build/static'
-]
+# STATICFILES_DIRS=[
+#     BASE_DIR/'static',
+#     BASE_DIR/'ecom_backend/build/static'
+# ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR ,"media")
 

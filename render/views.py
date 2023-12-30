@@ -12,6 +12,7 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.tokens import RefreshToken
 from datetime import datetime
+from rest_framework.pagination import PageNumberPagination
 
 # product views
 
@@ -49,9 +50,8 @@ def getProducts(request):
     if page == None:
         page = 1
     page = int(page)
-
     serializer = ProductSerializer(products, many=True)
-    return Response({'products': serializer.data, 'page': page, 'pages': paginator.num_pages})
+    return Response({ 'products': serializer.data, 'page': page, 'pages': paginator.num_pages})
 
 @api_view(['GET'])
 def getTopProducts(request):
@@ -300,7 +300,7 @@ def addOrderItems(request):
                 name=product.name,
                 qty=i['qty'],
                 price=i['price'],
-                image=product.image.url,
+                image=product.image,
             )
             # update stock
             product.countInStock -= int(orderItem.qty)
