@@ -202,10 +202,10 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/images/'
 
-STATICFILES_DIRS=[
-    BASE_DIR/'static',
-    BASE_DIR/'ecom_backend/build/static'
-]
+# STATICFILES_DIRS=[
+#     BASE_DIR/'static',
+#     BASE_DIR/'ecom_backend/build/static'
+# ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR ,"media")
 
