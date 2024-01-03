@@ -118,7 +118,7 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_REFRESH_LIFETIME": timedelta(days=1),
 }
 
-ROOT_URLCONF = 'ecom_backend.urls'
+ROOT_URLCONF = 'ecom.urls'
 
 TEMPLATES = [
     {
@@ -136,7 +136,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ecom_backend.wsgi.application'
+WSGI_APPLICATION = 'ecom.wsgi.application'
 
 
 # Database
