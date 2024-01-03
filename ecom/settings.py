@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-gf$8_yth#b^6zh@)dv0r)
 DEBUG = 'RENDER' not in os.environ
 
 # https://docs.djangoproject.com/en/3.0/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 # RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 # if RENDER_EXTERNAL_HOSTNAME:
@@ -40,8 +40,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'crispy_forms', # new
-    "crispy_bootstrap5", # new
+    # 'crispy_forms', # new
+    # "crispy_bootstrap5", # new
     'render.apps.RenderConfig', # new
     # 'inventory.apps.InventoryConfig', # new
     'django.contrib.admin',

@@ -56,7 +56,7 @@ class Order(models.Model):
         super(Order, self).save(*args, **kwargs)
 
         # create or update a new transaction object
-        if self.isPaid and not self.transaction_set.exists():
+        if self.isPaid:
             transaction = Transaction.objects.create(
                 user=self.user,
                 order=self,
@@ -78,7 +78,7 @@ class Order(models.Model):
 
     def generate_transaction_id(self):
         random_string = ''.join(random.choices(string.ascii_letters + string.digits, k=8))
-        return f"#{self._id}-{random_string}"
+        return f"#{self._id}{random_string}"
 
     def __str__(self):
         return str(self.createdAt)

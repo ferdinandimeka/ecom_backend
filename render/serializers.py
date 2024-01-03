@@ -95,3 +95,8 @@ class TransactionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Transaction
         fields = '__all__'
+
+    def get_order(self, obj):
+        items = obj.order
+        serializer = OrderSerializer(items, many=False)
+        return serializer.data

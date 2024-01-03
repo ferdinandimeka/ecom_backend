@@ -379,3 +379,10 @@ def getTransaction(request, pk):
     transaction = Transaction.objects.get(_id=pk)
     serializer = TransactionSerializer(transaction, many=False)
     return Response(serializer.data)
+
+@api_view(['GET'])
+@permission_classes([IsAdminUser])
+def getAllTransactions(request):
+    transactions = Transaction.objects.all()
+    serializer = TransactionSerializer(transactions, many=True)
+    return Response(serializer.data)
