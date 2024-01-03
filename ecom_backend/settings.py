@@ -118,7 +118,7 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_REFRESH_LIFETIME": timedelta(days=1),
 }
 
-ROOT_URLCONF = 'ecom.urls'
+ROOT_URLCONF = 'ecom_backend.urls'
 
 TEMPLATES = [
     {
@@ -136,7 +136,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ecom.wsgi.application'
+WSGI_APPLICATION = 'ecom_backend.wsgi.application'
 
 
 # Database
@@ -194,7 +194,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Turn on WhiteNoise storage backend that takes care of compressing static files
 # and creating unique names for each version so they can safely be cached forever.
