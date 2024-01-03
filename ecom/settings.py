@@ -194,7 +194,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Turn on WhiteNoise storage backend that takes care of compressing static files
 # and creating unique names for each version so they can safely be cached forever.
@@ -202,10 +202,10 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/images/'
 
-# STATICFILES_DIRS=[
-#     BASE_DIR/'static',
-#     BASE_DIR/'ecom_backend/build/static'
-# ]
+STATICFILES_DIRS=[
+    BASE_DIR/'static',
+    BASE_DIR/'ecom_backend/build/static'
+]
 
 MEDIA_ROOT = os.path.join(BASE_DIR ,"media")
 
